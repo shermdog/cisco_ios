@@ -119,7 +119,7 @@ module Puppet::Util::NetworkDevice::Cisco_ios # rubocop:disable Style/ClassAndMo
         send_command(connection, 'String' =>  'exit', 'Match' => re_conf_t)
         send_command(connection, 'String' =>  'exit', 'Match' => re_enable)
       elsif retrieve_mode != ModeState::ENABLED
-        enable_cmd = { 'String' => 'enable', 'Match' => %r{^Password:.*$|#} }
+        enable_cmd = { 'String' => 'enable', 'Match' => %r{Password:.*$|#} }
         send_command(connection, enable_cmd)
         send_command(connection, @enable_password)
       end
