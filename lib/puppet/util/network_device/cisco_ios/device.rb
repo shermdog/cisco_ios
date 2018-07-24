@@ -254,6 +254,7 @@ module Puppet::Util::NetworkDevice::Cisco_ios # rubocop:disable Style/ClassAndMo
         'Password' => config['password'],
         'Prompt' =>  %r{[#>]\s?\z},
         'Port' => config['port'] || 22,
+        'Timeout' => config['timeout'] || 100,
       )
       @enable_password = config['enable_password']
       # IOS will page large results which breaks prompt search
