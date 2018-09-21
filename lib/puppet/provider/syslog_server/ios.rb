@@ -46,6 +46,10 @@ unless PuppetX::CiscoIOS::Check.use_old_netdev_type
       Puppet::Provider::SyslogServer::SyslogServer.instances_from_cli(output)
     end
 
+    def canonicalize(_context, resources)
+      resources
+    end
+
     def update(context, _name, should)
       array_of_commands_to_run = Puppet::Provider::SyslogServer::SyslogServer.commands_from_instance(should)
       array_of_commands_to_run.each do |command|

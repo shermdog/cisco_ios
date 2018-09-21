@@ -52,6 +52,10 @@ unless PuppetX::CiscoIOS::Check.use_old_netdev_type
       Puppet::Provider::NtpServer::NtpServer.instances_from_cli(output)
     end
 
+    def canonicalize(_context, resources)
+      resources
+    end
+
     def delete(context, name)
       clear_hash = { name: name, ensure: 'absent' }
       array_of_commands_to_run = Puppet::Provider::NtpServer::NtpServer.commands_from_instance(clear_hash)
