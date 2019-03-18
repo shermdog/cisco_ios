@@ -1,0 +1,15 @@
+{
+  "description": "Execute CLI Command",
+  "input_method": "stdin",
+  "supports_noop": true,
+  "parameters": {
+    "target": {
+      "description": "The name of a device in device.conf on the (proxy) Puppet agent",
+      "type": "String[1]"
+    },
+    "command": {
+      "description": "CLI Command to execute",
+      "type": "String[1]"
+    }
+  }
+}
